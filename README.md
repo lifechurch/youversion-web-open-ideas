@@ -4,6 +4,8 @@ The purpose of this repo is to create a place for volunteer contributors to post
 
 The project contained here should have an extremely-low-friction setup, and be relatively easy to contribute potential React-based solutions to. 
 
+"Official" issues that are ready to be worked on are marked with the [Help Wanted](https://github.com/lifechurch/youversion-web-open-ideas/labels/help%20wanted) label. We may institute other labels or methods of organization later. 
+
 
 ### What it looks like
 
@@ -14,6 +16,7 @@ Following one of those links should navigate to a page showing a potential solut
 
 ### How to contribute
 
+- Choose an issue from this repo that is labeled ["Help Wanted"](https://github.com/lifechurch/youversion-web-open-ideas/labels/help%20wanted)
 - Fork and clone this repo
 - Run the development command for this project/app
 - Add a new route, following existing examples
