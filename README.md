@@ -34,4 +34,4 @@ Following one of those links should navigate to a page showing a potential solut
 
 ## License
 
-See the `LICENSE` file in the root of this repository. 
+See the `LICENSE` file in the root of this repository.
