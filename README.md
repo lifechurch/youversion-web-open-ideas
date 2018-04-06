@@ -1,5 +1,8 @@
 # YouVersion Web Open Ideas
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/7f8a6cdd0c63e79ff2c8/maintainability)](https://codeclimate.com/github/lifechurch/youversion-web-open-ideas/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7f8a6cdd0c63e79ff2c8/test_coverage)](https://codeclimate.com/github/lifechurch/youversion-web-open-ideas/test_coverage)
+
 The purpose of this repo is to create a place for volunteer contributors to post potential solutions to issues, mostly as one-off React Components, or small collections of components/pages.
 
 The project contained here should have an extremely-low-friction setup, and be relatively easy to contribute potential React-based solutions to.
