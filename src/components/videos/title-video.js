@@ -1,23 +1,23 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { Body, Card, LazyImage } from '../../melos'
+import { Body, Card, LazyImage, Caption1, Heading1, Heading2 } from '../../melos'
 
 
 const TitleVideo = (props) => {
-	const { imgUrl, title } = props
+	const { thumbnail, title } = props
 	return (
-		<div>
-			<Card>
-				<Body>
+		<div style={{ border: '1px solid grey', width: '720px', margin: '50px' }}>
+			{/*<Card>*/}
+				{/*<Body>*/}
 					<LazyImage
-						width={720}
-						height={380}
-						src={ imgUrl }
-						placeholder={<img src="https://baconmockup.com/720/380" alt="bear with me" />}
+						width="720px"
+						height="380px"
+						src={ thumbnail }
+						placeholder={ <img src="https://baconmockup.com/720/380" alt="bear with me" /> }
 					/>
-				</Body>
-				<Heading2>{title}</Heading2>
-			</Card>
+					<Heading2 muted textAlign="left"> { title }</Heading2>
+				{/*</Body>*/}
+			{/*</Card>*/}
 		</div>
 	)
 }
@@ -25,6 +25,6 @@ const TitleVideo = (props) => {
 export default TitleVideo
 
 TitleVideo.propTypes = {
-	imgUlr: PropTypes.string.isRequired,
+	thumbnail: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired
 }
