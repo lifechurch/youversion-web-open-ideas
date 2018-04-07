@@ -19,3 +19,4 @@ export class Videos extends React.Component {
 			</div>
 		);
 	}
+}
