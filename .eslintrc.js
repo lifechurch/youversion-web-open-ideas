@@ -31,12 +31,10 @@ module.exports = {
 	env: {
 		browser: true,
 		node: true,
-		jasmine: true,
-		'cypress/globals': true
+		jasmine: true
 	},
 	plugins: [
 		'react',
-		'cypress',
 		'import'
 	],
 	parser: 'babel-eslint',
@@ -45,7 +43,7 @@ module.exports = {
 		'plugin:import/errors'
 	],
 	rules: {
-		semi: 0,
+		semi: [ "error", "never" ],
 		'max-len': 0,
 		'object-curly-spacing': [2, 'always'],
 		indent: [2, 'tab', {
@@ -71,6 +69,10 @@ module.exports = {
 		'no-else-return': 0,
 		'no-plusplus': 0,
 		// jsx rules
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
 		'jsx-quotes': 0,
 		'react/jsx-filename-extension': [0, {
 			extensions: ['.js', '.jsx']
