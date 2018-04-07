@@ -35,7 +35,6 @@ module.exports = {
 	},
 	plugins: [
 		'react',
-		'cypress',
 		'import'
 	],
 	parser: 'babel-eslint',
