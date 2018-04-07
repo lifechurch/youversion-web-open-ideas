@@ -2,6 +2,9 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Body, Card, LazyImage, Caption1, Heading1, Heading2 } from '../../melos'
 
+/*
+* TODO: This is just some placeholder styling... things should be better.
+* */
 
 const TitleVideo = (props) => {
 	const { thumbnail, title } = props
@@ -28,3 +31,4 @@ TitleVideo.propTypes = {
 	thumbnail: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired
 }
+
