@@ -1,11 +1,20 @@
-import React from "react";
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export class Video extends React.Component {
-    render() {
-        return(
-            <div>
-                <h2>This is the <q>{this.props.match.params.slug}</q> video</h2>
-            </div>
-        );
-    }
+const Video = ({ match }) => {
+	return (
+		<div>
+			<h2>This is the <q>{match.params.slug}</q> video</h2>
+		</div>
+	)
 }
+
+Video.propTypes = {
+	match: PropTypes.shape({
+		params: PropTypes.shape({
+			topicId: PropTypes.string
+		})
+	}).isRequired
+}
+
+export default Video
