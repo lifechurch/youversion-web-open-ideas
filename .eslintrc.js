@@ -31,8 +31,7 @@ module.exports = {
 	env: {
 		browser: true,
 		node: true,
-		jasmine: true,
-		'cypress/globals': true
+		jasmine: true
 	},
 	plugins: [
 		'react',
