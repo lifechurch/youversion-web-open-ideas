@@ -1,12 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+import md5 from 'md5'
+import { get } from 'lodash'
 
 import TitleVideo from './title-video'
+import { titleVideosPage1, titleVideosPage2 } from '../../api/video-api-mock'
 import { VerticalSpace } from '../../melos'
 
 
 const Videos = () => {
+	const videos1 = get(titleVideosPage1, 'response.data.videos', [])
+	console.log(videos1)
 	return (
 		<div>
 			<Helmet>
@@ -15,9 +20,9 @@ const Videos = () => {
 			</Helmet>
 
 			<VerticalSpace space={10} padding={40}>
-				{ Array(10).fill('').map((video, index) => {
+				{ videos1.map((video) => {
 					return (
-						<TitleVideo thumbnail="https://placebear.com/g/720/480" title="Bear with me" key={ `vid-${index}` } />
+						<TitleVideo thumbnail={ get(video, 'thumbnails.1.url', '')} title={get(video, 'title', '')} key={md5(video.id)} />
 					)
 				})}
 			</VerticalSpace>

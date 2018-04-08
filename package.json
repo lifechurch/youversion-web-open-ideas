@@ -5,6 +5,7 @@
   "dependencies": {
     "@youversion/melos": "0.0.14",
     "lodash": "^4.17.5",
+    "md5": "^2.2.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
