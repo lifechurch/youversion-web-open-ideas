@@ -26,5 +26,6 @@ const Videos = () => {
 			</VerticalSpace>
 		</div>
 	)
-
 }
+
+export default Videos
