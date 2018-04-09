@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { videoDetailsJson } from '../../api/video-api-mock.js'
+import { Link } from 'react-router-dom'
 import Body from '@youversion/melos/dist/components/typography/Body'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
-import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
+import Title from '@youversion/melos/dist/components/typography/Title'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import Button from '@youversion/melos/dist/components/links/Button'
 import LinkText from '@youversion/melos/dist/components/links/LinkText'
 import { Div } from 'glamorous'
+import { videoDetailsJson } from '../../api/video-api-mock.js'
 
 const Video = ({ match }) => {
 	var video = videoDetailsJson.response.data
@@ -22,13 +23,13 @@ const Video = ({ match }) => {
 
 			<VerticalSpace padding={40} space={5} width={'1100px'} margin={'0 auto'}>
 				<Heading1 textAlign="left">{video.title}</Heading1>
-				<LinkText size={30}>{video.credits}</LinkText>
+				<Link style={{ textDecoration: 'none' }} to={`/videos/${video.id}/publisher`}><LinkText size={30}>{video.credits}</LinkText></Link>
 
 				{/* Video Player */}
 				<Div style={{ width: '100%', height: '632px', backgroundColor: 'black' }}></Div>
 
 				<VerticalSpace space={0} width={'65%'} margin={20}>
-					<Heading3 muted>RELATED SCRIPTURE</Heading3>
+					<Title textAlign="left" muted>Related Scripture</Title>
 					{ video.references.map((ref, i) => {
 						return <LinkText key={i} target='_blank' href={`https://www.bible.com/bible/206/${ref.usfm}`}>{ref.human}</LinkText>
 					})}
@@ -36,10 +37,10 @@ const Video = ({ match }) => {
 					<VerticalSpace height={10} />
 
 					{/* TODO: solution for less dangerous injection of HTML */}
-					<Body><span style={{color: '#444'}} dangerouslySetInnerHTML={{__html: video.description}} /></Body>
+					<Body><span style={{ color: '#444' }} dangerouslySetInnerHTML={{ __html: video.description }} /></Body>
 				</VerticalSpace>
 
-				<VerticalSpace width={'30%'} height={65} margin={20} style={{marginLeft: '5%'}}>
+				<VerticalSpace width={'30%'} height={65} margin={20} style={{ marginLeft: '5%' }}>
 					<Button>All Videos</Button>
 				</VerticalSpace>
 			</VerticalSpace>
