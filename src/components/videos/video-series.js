@@ -11,7 +11,7 @@ const VideoSeries = ({ match }) => {
 		<div>
 			<Helmet>
 				<title>{series.title} - {series.credits} | Videos | The Bible App | Bible.com</title>
-				<meta name="description" content={series.title + " - " + series.credits + " | Videos"} />
+				<meta name="description" content={`${series.title} - ${series.credits} | Videos`} />
 			</Helmet>
 
 			<h2>This is video series #{match.params.id}</h2>

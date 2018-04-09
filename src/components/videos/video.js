@@ -2,7 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { videoDetailsJson } from '../../api/video-api-mock.js'
-import { VerticalSpace, Heading1, LinkText, Heading3, Body, Button } from '../../melos'
+import Body from '@youversion/melos/dist/components/typography/Body'
+import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
+import Heading3 from '@youversion/melos/dist/components/typography/Heading3'
+import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
+import Button from '@youversion/melos/dist/components/links/Button'
+import LinkText from '@youversion/melos/dist/components/links/LinkText'
+import { Div } from 'glamorous'
 
 const Video = ({ match }) => {
 	var video = videoDetailsJson.response.data
@@ -11,7 +17,7 @@ const Video = ({ match }) => {
 		<div>
 			<Helmet>
 				<title>{video.title} - {video.credits} | Videos | The Bible App | Bible.com</title>
-				<meta name="description" content={video.title + " - " + video.credits + " | Videos"} />
+				<meta name="description" content={`${video.title} - ${video.credits} | Videos`} />
 			</Helmet>
 
 			<VerticalSpace padding={40} space={5} width={'1100px'} margin={'0 auto'}>
@@ -19,18 +25,21 @@ const Video = ({ match }) => {
 				<LinkText size={30}>{video.credits}</LinkText>
 
 				{/* Video Player */}
-				<div style={{width: '100%', height: '632px', backgroundColor: 'black'}}></div>
+				<Div style={{ width: '100%', height: '632px', backgroundColor: 'black' }}></Div>
 
-				<VerticalSpace space={0} width={'65%'}>
+				<VerticalSpace space={0} width={'65%'} margin={20}>
 					<Heading3 muted>RELATED SCRIPTURE</Heading3>
 					{ video.references.map((ref, i) => {
-						return <LinkText key={i} target='_blank' href={'https://www.bible.com/bible/206/' + ref.usfm}>{ref.human}</LinkText>
+						return <LinkText key={i} target='_blank' href={`https://www.bible.com/bible/206/${ref.usfm}`}>{ref.human}</LinkText>
 					})}
 					<hr />
-					<Body>{video.description}</Body>
+					<VerticalSpace height={10} />
+
+					{/* TODO: solution for less dangerous injection of HTML */}
+					<Body><span style={{color: '#444'}} dangerouslySetInnerHTML={{__html: video.description}} /></Body>
 				</VerticalSpace>
 
-				<VerticalSpace width={'30%'} height={65}>
+				<VerticalSpace width={'30%'} height={65} margin={20} style={{marginLeft: '5%'}}>
 					<Button>All Videos</Button>
 				</VerticalSpace>
 			</VerticalSpace>
