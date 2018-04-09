@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import md5 from 'md5'
 import { get } from 'lodash'
@@ -11,7 +10,6 @@ import { VerticalSpace } from '../../melos'
 
 const Videos = () => {
 	const videos1 = get(titleVideosPage1, 'response.data.videos', [])
-	console.log(videos1)
 	return (
 		<div>
 			<Helmet>
@@ -26,8 +24,6 @@ const Videos = () => {
 					)
 				})}
 			</VerticalSpace>
-			<hr />
-			<Link to="/videos/1/series">Visit series 1</Link>
 		</div>
 	)
 }
