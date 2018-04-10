@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { videoCollectionJson } from '../../api/video-api-mock'
 import VideoThumbnail from './thumbnail-component'
 
-const renderThumbnails = (response) => {
+const renderThumbnails = (response, i) => {
 	const link = `/media/${response.id}`
 	return (
 		<VideoThumbnail
+			key={i}
 			thumbnail={response.thumbnails[0].url}
-			id={response.id}
 			link={link}
 			title={response.title}
 			runtime={response.runtime}

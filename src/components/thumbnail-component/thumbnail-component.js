@@ -5,12 +5,11 @@ import Card from '@youversion/melos/dist/components/containers/Card'
 import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import '../../Thumbnail.css'
 
-
 const VideoThumbnail = (props) => {
 	const split_runtime = props.runtime.split(':')
 
 	return (
-			<Card className="thumbnail" key={props.id} >
+		<Card className="thumbnail" >
 				<Link to={props.link}>
 					<LazyImage
 						width="100%"
@@ -27,16 +26,15 @@ const VideoThumbnail = (props) => {
 						</div>
 					</div>
 				</Link>
-			</Card>
+		</Card>
 	)
 }
 
 VideoThumbnail.propTypes = {
-	id: PropTypes.number,
-	runtime: PropTypes.string,
-	link: PropTypes.string,
-	thumbnail: PropTypes.string,
-	title: PropTypes.string
+	runtime: PropTypes.string.isRequired,
+	link: PropTypes.string.isRequired,
+	thumbnail: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired
 }
 
 export default VideoThumbnail
