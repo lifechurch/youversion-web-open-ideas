@@ -1,0 +1,42 @@
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    position: relative;
+    margin: 20px;
+    padding: 0px;
+    line-height: 0px;
+    width: calc(33.33% - 40px);
+}
+
+.info {
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.info:hover {
+    background: url('https://www.bible.com/assets/play-15cb5ef729fb5418effd43ad6446656d.svg') no-repeat 0px 0px;
+    box-shadow: 2px -1px 7px #a9a9a9;
+    background-position: center;
+    background-size: 48px 48px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.info-description {
+    position: absolute;
+    bottom: 20px;
+    line-height: 20px;
+    left: 20px;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+.info-description h3 {
+    margin-bottom: 0.5rem;
+}

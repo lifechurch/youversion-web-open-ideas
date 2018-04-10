@@ -6,6 +6,7 @@ import TopicsComponent from './components/topics-component/topics-component'
 import Video from './components/videos/video'
 import VideoSeries from './components/videos/video-series'
 import Videos from './components/videos/videos'
+import Thumbnail from './components/thumbnail-component/thumbnails';
 
 const YouVersionWebOpenIdeas = () => {
 	return (
@@ -24,6 +25,9 @@ const YouVersionWebOpenIdeas = () => {
 					<li>
 						<Link to="/videos">Videos</Link>
 					</li>
+					<li>
+						<Link to="/thumbnail">Thumbnail</Link>
+					</li>
 				</ul>
 
 				<hr />
@@ -32,6 +36,7 @@ const YouVersionWebOpenIdeas = () => {
 				<Route path="/about" component={AboutComponent} />
 				<Route path="/topics" component={TopicsComponent} />
 				<Route path="/videos" component={Videos} />
+				<Route path="/thumbnail" component={Thumbnail} />
 				<Route exact path="/videos/:id/series" component={VideoSeries} />
 				<Route exact path="/videos/:slug" component={Video} />
 			</div>
