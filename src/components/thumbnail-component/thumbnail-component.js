@@ -10,22 +10,22 @@ const VideoThumbnail = (props) => {
 
 	return (
 		<Card className="thumbnail" >
-				<Link to={props.link}>
-					<LazyImage
-						width="100%"
-						src={props.thumbnail}
-					/>
-					<div className="info">
-						<div className="info-description">
-							<h3 className="title">{props.title}</h3>
-							<span className="runtime">
-								{(split_runtime[0] > 0) ? `${split_runtime[0]}:` : ''}
-								{(split_runtime[1] > 0) ? `${split_runtime[1]}` : ''}
-								{(split_runtime[2] > 0) ? `:${split_runtime[2]}` : ''}
-							</span>
-						</div>
+			<Link to={props.link}>
+				<LazyImage
+					width="100%"
+					src={props.thumbnail}
+				/>
+				<div className="info">
+					<div className="info-description">
+						<h3 className="title">{props.title}</h3>
+						<span className="runtime">
+							{(split_runtime[0] > 0) ? `${split_runtime[0]}:` : ''}
+							{(split_runtime[1] > 0) ? `${split_runtime[1]}` : ''}
+							{(split_runtime[2] > 0) ? `:${split_runtime[2]}` : ''}
+						</span>
 					</div>
-				</Link>
+				</div>
+			</Link>
 		</Card>
 	)
 }
