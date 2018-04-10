@@ -6,7 +6,7 @@ import TopicsComponent from './components/topics-component/topics-component'
 import Video from './components/videos/video'
 import VideoSeries from './components/videos/video-series'
 import Videos from './components/videos/videos'
-import Thumbnail from './components/thumbnail-component/thumbnails';
+import Thumbnail from './components/thumbnail-component/thumbnails'
 
 const YouVersionWebOpenIdeas = () => {
 	return (
