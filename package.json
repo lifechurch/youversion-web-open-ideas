@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@youversion/melos": "0.0.14",
+    "glamorous": "^4.12.2",
     "lodash": "^4.17.5",
     "md5": "^2.2.1",
     "prop-types": "^15.6.1",
@@ -11,7 +12,8 @@
     "react-dom": "^16.3.0",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-sizeme": "^2.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
