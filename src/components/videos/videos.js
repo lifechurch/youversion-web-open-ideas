@@ -29,7 +29,8 @@ const BuildTitleVideoComponentRows = (videoResponse) => {
 				credits={video.credits} createdDate={video.created_dt}
 				publishedDate={video.published_dt} thumbnail={video.thumbnails[0].url}
 				width={video.thumbnails[0].width} height={video.thumbnails[0].height}
-				thumbnails={video.thumbnails} />
+				thumbnails={video.thumbnails} 
+			/>
 			)
 
 		if (i % 2 === 0) {
