@@ -1,16 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import '../../Thumbnail.css'
+
+const Link = props => <a {...props}>A link</a>;
 
 const VideoThumbnail = (props) => {
 	const split_runtime = props.runtime.split(':')
 
 	return (
 		<Card className="thumbnail" >
-			<Link to={props.link}>
+			<Link href={props.link}>
 				<LazyImage
 					width="100%"
 					src={props.thumbnail}
@@ -21,7 +22,7 @@ const VideoThumbnail = (props) => {
 						<span className="runtime">
 							{(split_runtime[0] > 0) ? `${split_runtime[0]}:` : ''}
 							{(split_runtime[1] > 0) ? `${split_runtime[1]}` : ''}
-							{(split_runtime[2] > 0) ? `:${split_runtime[2]}` : ''}
+							{`:${split_runtime[2]}`}
 						</span>
 					</div>
 				</div>
