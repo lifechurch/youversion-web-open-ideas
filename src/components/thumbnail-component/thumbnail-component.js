@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Card from '@youversion/melos/dist/components/containers/Card'
-import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import Link from '@youversion/melos/dist/components/links/Link'
+import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import '../../Thumbnail.css'
 
 const VideoThumbnail = (props) => {
