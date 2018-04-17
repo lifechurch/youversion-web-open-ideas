@@ -21,19 +21,22 @@ const BuildTitleVideoComponentRows = (videoResponse) => {
 	let titleVideoB = null
 
 	for (let i = 0; i < videoResponse.videos.length; i++) {
-		let video = videoResponse.videos[i]
-		let titleVideo =
+		const video = videoResponse.videos[i]
+		const titleVideo =
 			(<TitleVideo
 				id={video.id} title={video.title} description={video.description}
 				shortUrl={video.short_url} languageTag={video.language_tag}
 				credits={video.credits} createdDate={video.created_dt}
 				publishedDate={video.published_dt} thumbnail={video.thumbnails[0].url}
 				width={video.thumbnails[0].width} height={video.thumbnails[0].height}
-				thumbnails={video.thumbnails} 
-				/>)
+				thumbnails={video.thumbnails} />
+			)
 
-		if (i % 2 === 0) { titleVideoA = titleVideo
-		} else { titleVideoB = titleVideo }
+		if (i % 2 === 0) {
+			titleVideoA = titleVideo
+		} else {
+			titleVideoB = titleVideo
+		}
 
 		if (titleVideoA != null && titleVideoB != null) {
 			titleVideoComponentRows.push(VideoRow(titleVideoA, titleVideoB))
