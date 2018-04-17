@@ -6,7 +6,28 @@ import TitleVideo from './title-video'
 import { titleVideosPage1 } from '../../api/video-api-mock.js'
 
 const Videos = () => {
-	var videoResponse = titleVideosPage1.response.data
+	var titleVideoComponentRows = BuildTitleVideoComponentRows(titleVideosPage1.response.data)
+
+	return (
+		<div>
+			<Helmet>
+				<title>Watch videos about the Bible | The Bible App | Bible.com</title>
+				<meta name="description" content="Watch videos about the Bible" />
+			</Helmet>
+
+			<Heading1>Videos</Heading1>
+			
+			<div class="wrapper">
+				{titleVideoComponentRows}
+			</div>
+			<div class="wrapper">
+				<Link to="/videos/1/series">Visit series 1</Link>
+			</div>
+		</div>
+	)
+}
+
+const BuildTitleVideoComponentRows = (videoResponse) => {
 	var titleVideoComponentRows = []
 	var titleVideoA = null
 	var titleVideoB = null
@@ -44,23 +65,7 @@ const Videos = () => {
 		titleVideoA = titleVideoB = null
 	}
 
-	return (
-		<div>
-			<Helmet>
-				<title>Watch videos about the Bible | The Bible App | Bible.com</title>
-				<meta name="description" content="Watch videos about the Bible" />
-			</Helmet>
-
-			<Heading1>Videos</Heading1>
-			
-			<div class="wrapper">
-				{titleVideoComponentRows}
-			</div>
-			<div class="wrapper">
-				<Link to="/videos/1/series">Visit series 1</Link>
-			</div>
-		</div>
-	)
+	return titleVideoComponentRows;
 }
 
 // Mock this out as if Bible.com used Bootstrap for a grid system.
