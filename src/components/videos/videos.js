@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import TitleVideo from './title-video'
-import { titleVideosPage1 } from '../../api/video-api-mock.js'
+import { titleVideosPage1 } from '../../api/video-api-mock'
 
 // Mock this out as if Bible.com used Bootstrap for a grid system.
 const VideoRow = (titleVideoA, titleVideoB) => {
@@ -29,7 +29,7 @@ const BuildTitleVideoComponentRows = (videoResponse) => {
 				credits={video.credits} createdDate={video.created_dt}
 				publishedDate={video.published_dt} thumbnail={video.thumbnails[0].url}
 				width={video.thumbnails[0].width} height={video.thumbnails[0].height}
-				thumbnails={video.thumbnails} 
+				thumbnails={video.thumbnails}
 			/>
 			)
 
