@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Card from '@youversion/melos/dist/components/containers/Card'
 import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
+import Link from '@youversion/melos/dist/components/links/Link'
 import '../../Thumbnail.css'
-
-const Link = props => <a {...props}>A link</a>;
 
 const VideoThumbnail = (props) => {
 	const split_runtime = props.runtime.split(':')
