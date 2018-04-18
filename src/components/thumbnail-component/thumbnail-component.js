@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Card from '@youversion/melos/dist/components/containers/Card'
+import { Div } from 'glamorous'
 import Link from '@youversion/melos/dist/components/links/Link'
 import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 import '../../Thumbnail.css'
 
 const VideoThumbnail = (props) => {
+
 	const split_runtime = props.runtime.split(':')
 
 	return (
-		<Card className="thumbnail" >
+		<Div margin={20} className="thumbnail" >
 			<Link href={props.link}>
 				<LazyImage
 					width="100%"
@@ -26,7 +27,7 @@ const VideoThumbnail = (props) => {
 					</div>
 				</div>
 			</Link>
-		</Card>
+		</Div>
 	)
 }
 

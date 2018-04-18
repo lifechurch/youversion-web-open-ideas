@@ -6,7 +6,6 @@
 .thumbnail {
     position: relative;
     margin: 20px;
-    padding: 0px;
     line-height: 0px;
     width: calc(33.33% - 40px);
 }
