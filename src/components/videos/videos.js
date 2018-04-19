@@ -32,6 +32,7 @@ const BuildTitleVideoComponentRows = (videoResponse) => {
 	const titleVideoComponentRows = []
 	let titleVideoA = null
 	let titleVideoB = null
+	const isVideoCountEven = (videoResponse.videos.length % 2 === 0)
 
 	for (let i = 0; i < videoResponse.videos.length; i++) {
 		if (i % 2 === 0) {
@@ -40,7 +41,8 @@ const BuildTitleVideoComponentRows = (videoResponse) => {
 			titleVideoB = CreateTitleVideo(videoResponse.videos[i])
 		}
 
-		if (titleVideoB !== null || (titleVideoB === null && i === videoResponse.videos.length - 1)) {
+		const lastInterationAndOdd = (i === videoResponse.videos.length - 1 && !isVideoCountEven)
+		if (titleVideoB !== null || lastInterationAndOdd) {
 			titleVideoComponentRows.push(VideoRow(titleVideoA, titleVideoB))
 			titleVideoA = null
 			titleVideoB = null
