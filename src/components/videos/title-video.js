@@ -1,9 +1,8 @@
 
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
-import LinkText from '@youversion/melos/dist/components/links/LinkText'
 import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 // import { LazyImage, Heading2, LinkText } from '../../melos'
 
