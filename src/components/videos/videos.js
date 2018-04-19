@@ -15,42 +15,36 @@ const VideoRow = (titleVideoA, titleVideoB) => {
 	)
 }
 
+const CreateTitleVideo = (video) => {
+	return (
+		<TitleVideo
+			id={video.id} title={video.title} description={video.description}
+			shortUrl={video.short_url} languageTag={video.language_tag}
+			credits={video.credits} createdDate={video.created_dt}
+			publishedDate={video.published_dt} thumbnail={video.thumbnails[0].url}
+			width={video.thumbnails[0].width} height={video.thumbnails[0].height}
+			thumbnails={video.thumbnails}
+		/>
+	)
+}
+
 const BuildTitleVideoComponentRows = (videoResponse) => {
 	const titleVideoComponentRows = []
 	let titleVideoA = null
 	let titleVideoB = null
 
 	for (let i = 0; i < videoResponse.videos.length; i++) {
-		const video = videoResponse.videos[i]
-		const titleVideo =
-			(<TitleVideo
-				id={video.id} title={video.title} description={video.description}
-				shortUrl={video.short_url} languageTag={video.language_tag}
-				credits={video.credits} createdDate={video.created_dt}
-				publishedDate={video.published_dt} thumbnail={video.thumbnails[0].url}
-				width={video.thumbnails[0].width} height={video.thumbnails[0].height}
-				thumbnails={video.thumbnails}
-			/>
-			)
-
 		if (i % 2 === 0) {
-			titleVideoA = titleVideo
+			titleVideoA = CreateTitleVideo(videoResponse.videos[i])
 		} else {
-			titleVideoB = titleVideo
+			titleVideoB = CreateTitleVideo(videoResponse.videos[i])
 		}
 
-		if (titleVideoA != null && titleVideoB != null) {
+		if (titleVideoB !== null || (titleVideoB === null && i === videoResponse.videos.length - 1)) {
 			titleVideoComponentRows.push(VideoRow(titleVideoA, titleVideoB))
 			titleVideoA = null
 			titleVideoB = null
 		}
-	}
-
-	// Add the last video if there is an odd number of videos
-	if (titleVideoA != null && titleVideoB == null) {
-		titleVideoComponentRows.push(VideoRow(titleVideoA, titleVideoB))
-		titleVideoA = null
-		titleVideoB = null
 	}
 
 	return titleVideoComponentRows
@@ -71,7 +65,7 @@ const Videos = () => {
 			<div className="wrapper">
 				{titleVideoComponentRows}
 			</div>
-			<div className="wrapper">
+			<div className="wrapper clearfix">
 				<Link to="/videos/1/series">Visit series 1</Link>
 			</div>
 		</div>

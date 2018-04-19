@@ -16,3 +16,7 @@ body {
   margin: 0 auto;
   width: 1650px;
 }
+
+.clearfix {
+  overflow: auto;
+}
