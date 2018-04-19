@@ -28,15 +28,15 @@ const CreateTitleVideo = (video) => {
 	)
 }
 
-const BuildTitleVideoComponentRows = (videoResponse) => {
+const CreateTitleVideoComponentRows = (videoResponse) => {
 	const titleVideoComponentRows = []
 	let titleVideos = []
-	const isVideoCountEven = (videoResponse.videos.length % 2 === 0)
 
 	for (let i = 0; i < videoResponse.videos.length; i++) {
 		titleVideos[i % 2] = CreateTitleVideo(videoResponse.videos[i])
 
-		if (titleVideos[i % 2] !== null || (i === videoResponse.videos.length - 1 && !isVideoCountEven)) {
+		// Create a row every two videos unless it's the last video and there is an odd number of videos.
+		if (titleVideos[i % 2] !== null || (i === videoResponse.videos.length - 1 && (videoResponse.videos.length % 2 === 1))) {
 			titleVideoComponentRows.push(VideoRow(titleVideos[0], titleVideos[1]))
 			titleVideos = []
 		}
@@ -46,7 +46,7 @@ const BuildTitleVideoComponentRows = (videoResponse) => {
 }
 
 const Videos = () => {
-	const titleVideoComponentRows = BuildTitleVideoComponentRows(titleVideosPage1.response.data)
+	const titleVideoComponentRows = CreateTitleVideoComponentRows(titleVideosPage1.response.data)
 
 	return (
 		<div>
