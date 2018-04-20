@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import HomeComponent from './components/home-component/home-component'
-import AboutComponent from './components/about-component/about-component'
-import TopicsComponent from './components/topics-component/topics-component'
+import Home from './components/Home'
+import About from './components/About'
+import Topics from './components/Topics'
 import Video from './components/videos/video'
 import VideoSeries from './components/videos/video-series'
 import Videos from './components/videos/videos'
@@ -28,9 +28,9 @@ const YouVersionWebOpenIdeas = () => {
 
 				<hr />
 
-				<Route exact path="/" component={HomeComponent} />
-				<Route path="/about" component={AboutComponent} />
-				<Route path="/topics" component={TopicsComponent} />
+				<Route exact path="/" component={Home} />
+				<Route path="/about" component={About} />
+				<Route path="/topics" component={Topics} />
 				<Route path="/videos" component={Videos} />
 				<Route exact path="/videos/:id/series" component={VideoSeries} />
 				<Route exact path="/videos/:slug" component={Video} />
