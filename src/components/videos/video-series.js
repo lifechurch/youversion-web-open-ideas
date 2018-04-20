@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
 import { videoCollectionJson } from '../../api/video-api-mock'
 import HelmetComponent from '../HelmetComponent'
 
 const VideoSeries = ({ match }) => {
-	const series = videoCollectionJson.response.data
-
 	return (
 		<div>
 			<HelmetComponent credits="" title="" />

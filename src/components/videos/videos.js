@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
 import TitleVideo from './title-video'
-import { titleVideosPage1, titleVideosPage2 } from '../../api/video-api-mock'
+import { titleVideosPage1 } from '../../api/video-api-mock'
 import HelmetComponent from '../HelmetComponent'
 
-const Videos = porps => {
+const Videos = () => {
 	const { response: { data: { videos } } } = titleVideosPage1
 	return (
 		<div>

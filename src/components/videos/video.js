@@ -5,7 +5,6 @@ import { videoDetailsJson } from '../../api/video-api-mock'
 import HelmetComponent from '../HelmetComponent'
 
 const Video = ({ match }) => {
-	const video = videoDetailsJson.response.data
 	return (
 		<div>
 			<HelmetComponent credits="" title="" />

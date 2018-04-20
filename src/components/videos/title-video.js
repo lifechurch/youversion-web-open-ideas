@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React from 'react'
 import { Div, H3 } from 'glamorous'
 import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
 
