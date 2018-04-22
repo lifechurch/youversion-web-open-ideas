@@ -9,18 +9,21 @@ import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 import './series-hero.css'
 import InfoIcon from '../../components/svg/info-icon'
 
-const SeriesHero = (props) => {
-
-	const Container = glamorous.div({}, () => {
+const BuildContainer = (imgSrc) => {
+	return glamorous.div({}, () => {
 		return {
 			position: 'relative',
 			minHeight: '368',
 			maxWidth: '1100',
-			background: `url('${props.imgSrc}') no-repeat center top`,
+			background: `url('${imgSrc}') no-repeat center top`,
 			backgroundSize: 'cover',
 			className: 'series-hero'
 		}
 	})
+}
+
+const SeriesHero = (props) => {
+	const Container = BuildContainer(props.imgSrc)
 
 	return (
 		<Container className="series-hero">
