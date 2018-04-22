@@ -1,4 +1,4 @@
-import { Div } from 'glamorous'
+import glamorous, { Div } from 'glamorous'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -11,34 +11,40 @@ import InfoIcon from '../../components/svg/info-icon'
 
 const SeriesHero = (props) => {
 
+	const Container = glamorous.div({}, () => {
+		return {
+			position: 'relative',
+			minHeight: '368',
+			maxWidth: '1100',
+			background: `url('${props.imgSrc}') no-repeat center top`,
+			backgroundSize: 'cover',
+			className: 'series-hero'
+		}
+	})
+
 	return (
-		<Div
-			position="relative"
-			minHeight="368"
-			maxWidth="1100"
-			background={`url('${props.imgSrc}') no-repeat center top`}
-			backgroundSize="cover"
-			className="series-hero">
+		<Container className="series-hero">
 			<Div
-				bottom="20"
-				left="20"
-				position="absolute">
-				<Heading1 textAlign="left" fontColor="white">{props.seriesTitle}</Heading1>
+				bottom='20'
+				left='20'
+				position='absolute'
+			>
+				<Heading1 textAlign='left' fontColor='white'>{props.seriesTitle}</Heading1>
 				<Heading2>
 					<Div
-						height="24"
-						width="24"
-						display="inline-block"
-						position="relative"
-						paddingRight="3"
-						top="7"
+						height='24'
+						width='24'
+						display='inline-block'
+						position='relative'
+						paddingRight='3'
+						top='7'
 					>
 						<InfoIcon />
 					</Div>
 					<LinkText href={props.publisherHref}>{props.publisher}</LinkText>
 				</Heading2>
 			</Div>
-		</Div>
+		</Container>
 	)
 }
 
