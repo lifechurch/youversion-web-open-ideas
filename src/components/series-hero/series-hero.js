@@ -1,4 +1,4 @@
-import {Div} from 'glamorous'
+import { Div } from 'glamorous'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -32,8 +32,8 @@ const SeriesHero = (props) => {
 						position="relative"
 						paddingRight="3"
 						top="7"
-						>
-						<InfoIcon></InfoIcon>
+					>
+						<InfoIcon />
 					</Div>
 					<LinkText href={props.publisherHref}>{props.publisher}</LinkText>
 				</Heading2>
