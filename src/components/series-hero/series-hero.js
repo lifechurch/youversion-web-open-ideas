@@ -44,7 +44,7 @@ const SeriesHero = (props) => {
 					>
 						<InfoIcon />
 					</Div>
-					<LinkText href={props.publisherHref}>{props.publisher}</LinkText>
+					<LinkText href={props.creditHRef}>{props.credit}</LinkText>
 				</Heading2>
 			</Div>
 		</Container>
@@ -54,8 +54,8 @@ const SeriesHero = (props) => {
 SeriesHero.propTypes = {
 	seriesTitle: PropTypes.string.isRequired,
 	imgSrc: PropTypes.string.isRequired,
-	publisher: PropTypes.string.isRequired,
-	publisherHref: PropTypes.string.isRequired
+	credit: PropTypes.string.isRequired,
+	creditHRef: PropTypes.string.isRequired
 }
 
 export default SeriesHero
