@@ -25,6 +25,14 @@ Following one of those links should navigate to a page showing a potential solut
 - If your solution should have tests, create tests in the appropriate test file
 - [Commit your changes, and submit a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)
 
+### Code style and standards
+
+Since this project is a bit of a sandbox, we don't plan to be too strict. We'll automate code style suggestions where we can, through the use of tools like ESLint, and generally stick to common standards in the "community". When we've developed an official standards doc, we'll link to that here. In the mean time, here are some guidelines:
+
+- Most style and code rules we would like to adhere to are configured in our [ESLint](https://eslint.org/) configuration file. It's `.eslintrc.js` in this repo. If your programming environment is set up to use project-specific ESLint configs, you will automatically catch most relevant issues. This is a very handy tool, and we recommend it!
+- When building Components, put them in the `components` directory. Ideally, the resulting import statements should look something like `import Home from './components/Home'`.
+- For other things not covered here, our "catch-all" is to refer to the AirBNB [Javascript](https://github.com/airbnb/javascript) and [React/JSX](https://github.com/airbnb/javascript/tree/master/react) style guides. Or just ask! We'll figure it out together. =)
+
 ## Getting started
 
 - Fork and/or clone this repo.

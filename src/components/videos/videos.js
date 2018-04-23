@@ -1,27 +1,70 @@
-import React, { Component } from 'react'
-import VerticalSpace from '@youversion/melos/dist/components/layouts/VerticalSpace'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
+import Heading1 from '@youversion/melos/dist/components/typography/Heading1'
 import TitleVideo from './title-video'
 import { titleVideosPage1 } from '../../api/video-api-mock'
 
-class Videos extends Component {
+// Mock this out as if Bible.com used Bootstrap for a grid system.
+const VideoRow = (titleVideoA, titleVideoB) => {
+	return (
+		<div className="row">
+			<div className="float-left">{titleVideoA}</div>
+			<div className="float-left">{titleVideoB}</div>
+		</div>
+	)
+}
 
-	render() {
+const CreateTitleVideo = (video) => {
+	return (
+		<TitleVideo
+			id={video.id} title={video.title} description={video.description}
+			shortUrl={video.short_url} languageTag={video.language_tag}
+			credits={video.credits} createdDate={video.created_dt}
+			publishedDate={video.published_dt} thumbnail={video.thumbnails[0].url}
+			width={video.thumbnails[0].width} height={video.thumbnails[0].height}
+			thumbnails={video.thumbnails}
+		/>
+	)
+}
 
-		const { response: { data: { videos } } } = titleVideosPage1
+const CreateTitleVideoComponentRows = (videoResponse) => {
+	const titleVideoComponentRows = []
+	let titleVideos = []
 
-		return (
-			<div>
-				<Helmet>
-					<title>Watch videos about the Bible | The Bible App | Bible.com</title>
-					<meta name="description" content="Watch videos about the Bible" />
-				</Helmet>
+	for (let i = 0; i < videoResponse.videos.length; i++) {
+		titleVideos[i % 2] = CreateTitleVideo(videoResponse.videos[i])
 
-				<VerticalSpace space={10} padding={40}>
-					{ videos.map((video) => <TitleVideo { ...video } key={ video.id } />) }
-				</VerticalSpace>
-			</div>
-		)
+		// Create a row every two videos unless it's the last video and there is an odd number of videos.
+		if (titleVideos[i % 2] !== null || (i === videoResponse.videos.length - 1 && (videoResponse.videos.length % 2 === 1))) {
+			titleVideoComponentRows.push(VideoRow(titleVideos[0], titleVideos[1]))
+			titleVideos = []
+		}
 	}
+
+	return titleVideoComponentRows
+}
+
+const Videos = () => {
+	const titleVideoComponentRows = CreateTitleVideoComponentRows(titleVideosPage1.response.data)
+
+	return (
+		<div>
+			<Helmet>
+				<title>Watch videos about the Bible | The Bible App | Bible.com</title>
+				<meta name="description" content="Watch videos about the Bible" />
+			</Helmet>
+
+			<Heading1>Videos</Heading1>
+
+			<div className="wrapper">
+				{titleVideoComponentRows}
+			</div>
+			<div className="wrapper clearfix">
+				<Link to="/videos/1/series">Visit series 1</Link>
+			</div>
+		</div>
+	)
 }
 
 export default Videos
