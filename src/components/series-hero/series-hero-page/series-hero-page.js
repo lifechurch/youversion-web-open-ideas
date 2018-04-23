@@ -1,8 +1,22 @@
 import { Div } from 'glamorous'
 import React from 'react'
 
+import Theme from '@youversion/melos/dist/components/themes/Theme'
+
 import SeriesHero from '../series-hero'
 import { titleVideosPage1 } from '../../../api/video-api-mock'
+
+const customTheme = {
+	constants: {
+		fontFamily: {
+			primary: 'AppleGothic'
+		},
+		color: {
+			text: 'white',
+			primary: 'white'
+		}
+	}
+}
 
 const SeriesHeroPage = () => {
 
@@ -13,14 +27,16 @@ const SeriesHeroPage = () => {
 	const heroImage = seriesData.thumbnails[4].url
 
 	return (
-		<Div maxWidth="1100" margin="0 auto">
-			<SeriesHero
-				seriesTitle={seriesData.title}
-				credit={seriesData.credits}
-				imgSrc={heroImage}
-				creditHref="#"
-			/>
-		</Div>
+		<Theme definition={customTheme}>
+			<Div maxWidth="1100" margin="0 auto">
+				<SeriesHero
+					seriesTitle={seriesData.title}
+					credit={seriesData.credits}
+					imgSrc={heroImage}
+					creditHref="#"
+				/>
+			</Div>
+		</Theme>
 	)
 }
 
