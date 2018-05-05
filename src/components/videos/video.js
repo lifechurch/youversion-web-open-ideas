@@ -14,7 +14,7 @@ import { videoDetailsJson } from '../../api/video-api-mock'
 const Video = ({ match }) => {
 	const video = videoDetailsJson.response.data
 
-	return (
+  return (
 		<div>
 			<Helmet>
 				<title>{video.title} - {video.credits} | Videos | The Bible App | Bible.com</title>
