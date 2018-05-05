@@ -1,37 +1,25 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Div, H3 } from 'glamorous'
 import LazyImage from '@youversion/melos/dist/components/images/LazyImage'
-import Heading2 from '@youversion/melos/dist/components/typography/Heading2'
 
-/*
-* TODO: This is just some placeholder styling... things should be better.
-* */
 
 const TitleVideo = (props) => {
-	const { thumbnail, title } = props
+	const { title, thumbnails } = props
 	return (
-		<div style={{ border: '1px solid grey', width: '720px', margin: '50px' }}>
-			{/* <Card> */}
-			{/* <Body> */}
-			<Link to="/videos/1/series">
-				<LazyImage
-					width="720px"
-					height="480px"
-					src={ thumbnail }
-					placeholder={ <img src="http://via.placeholder.com/720x480" alt="video thumbnail" /> }
-				/>
-				<Heading2 muted textAlign="left"> { title }</Heading2>
-			</Link>
-			{/* </Body> */}
-			{/* </Card> */}
-		</div>
+		<Div border='1px solid #ccc' width='auto' margin='15px !important'>
+			<LazyImage
+				src={thumbnails[2].url}
+				placeholder={<img src="http://via.placeholder.com/720x480" alt="video thumbnail" />}
+			/>
+			<H3 color='#aaa' padding={5}> { title }</H3>
+		</Div>
 	)
 }
 
-export default TitleVideo
 
 TitleVideo.propTypes = {
-	thumbnail: PropTypes.string.isRequired,
+	thumbnails: PropTypes.array.isRequired,
 	title: PropTypes.string.isRequired
 }
+export default TitleVideo
