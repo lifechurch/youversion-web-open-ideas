@@ -1,5 +1,23 @@
 body {
+  box-sizing: border-box;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1650px;
+}
+
+.clearfix {
+  overflow: auto;
 }

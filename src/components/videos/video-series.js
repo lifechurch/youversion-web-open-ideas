@@ -5,6 +5,11 @@ import PropTypes from 'prop-types'
 const VideoSeries = ({ match }) => {
 	return (
 		<div>
+			<Helmet>
+				<title>{series.title} - {series.credits} | Videos | The Bible App | Bible.com</title>
+				<meta name="description" content={`${series.title} - ${series.credits} | Videos`} />
+			</Helmet>
+
 			<h2>This is video series #{match.params.id}</h2>
 
 			{ /* TODO: REMOVE THIS PLACEHOLDER SECTION */ }
