@@ -8,6 +8,7 @@ import VideoSeries from './components/videos/video-series'
 import Videos from './components/videos/videos'
 import Thumbnail from './components/thumbnail-component/thumbnails'
 import SeriesHeroPage from './components/series-hero/series-hero-page/series-hero-page'
+import VideoSeriesMain from './components/video-series'
 
 const YouVersionWebOpenIdeas = () => {
 	return (
@@ -30,6 +31,9 @@ const YouVersionWebOpenIdeas = () => {
 						<Link to="/thumbnail">Thumbnail</Link>
 						<Link to="/series-hero">Series Hero</Link>
 					</li>
+					<li>
+						<Link to="/video-series">{'<VideoSeries />'}</Link>
+					</li>
 				</ul>
 
 				<hr />
@@ -40,6 +44,7 @@ const YouVersionWebOpenIdeas = () => {
 				<Route path="/videos" component={Videos} />
 				<Route path="/thumbnail" component={Thumbnail} />
 				<Route path="/series-hero" component={SeriesHeroPage} />
+				<Route path="/video-series" component={VideoSeriesMain} />
 				<Route exact path="/videos/:id/series" component={VideoSeries} />
 				<Route exact path="/videos/:slug" component={Video} />
 			</div>
